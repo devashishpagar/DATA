@@ -1,0 +1,41 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+import warnings
+warnings.filterwarnings('ignore')
+df = pd.read_csv(C:/datasets/fortune500.csv)
+df.shape
+df.isnull().sum()
+df.describe()
+df.describe(include=['object'])
+df.describe(include='all')
+mean = df['Revenue (in millions)'].mean()
+print(mean)
+median = df['Revenue (in millions)'].median()
+print(median)
+mode = df['Revenue (in millions)'].mode()
+print(mode)
+data = df['Revenue (in millions)']
+sns.distplot(data, bins=10, hist=True, kde=True, label = 'Revenue (in millions)')
+df['Revenue (in millions)'].min()
+df['Revenue (in millions)'].max()
+df['Revenue (in millions)'].max() - df['Revenue (in millions)'].min()
+df['Revenue (in millions)'].var()
+df['Revenue (in millions)'].std()
+Q2 = df['Revenue (in millions)'].quantile(0.5)
+
+Q2
+Q3 = df['Revenue (in millions)'].quantile(0.75)
+
+Q3
+Q1 = df['Revenue (in millions)'].quantile(0.25)
+
+Q1
+IQR = Q3  - Q1
+
+IQR
+plt.boxplot(df['Revenue (in millions)'])
+
+plt.show()

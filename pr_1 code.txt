@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+dataset=pd.read_csv(r"C:\Users\Dell\Downloads\employees.csv")
+dataset
+dataset=dataset.rename(columns={"Start Date" :"Joining_Date","Bonus %":"Bonus"})
+dataset.head()
+data_new=dataset.drop([1,4])
+data_new
+data_new=dataset.drop([1,4],axis=0)
+data_new.head()
+data_new=dataset.drop(['Last Login Time'],axis=1)
+data_new.head()
+data_new=dataset.drop([1,4],axis=0)
+data_new.head()  b......
+data_new=data_new.reset_index() 
+data_new b....
+filter=dataset['Gender']=='Male'
+dataset[filter]
+filter2=dataset['Gender']=='Female'
+dataset[filter2]
+filter4=dataset['Salary']>=100000
+dataset[filter4] b....
+filter4=dataset['Joining_Date']>='2015-01-01' # Display who join after 2015
+dataset[filter4] b...
+filter1=dataset['Gender']=='Female'
+filter2=dataset['Team']=='Engineering'
+dataset[filter1 & filter2] b....
+filter1=dataset['Gender']=='Female'
+filter2=dataset['Team']=='Engineering'
+dataset[filter1 | filter2]
+
